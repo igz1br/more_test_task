@@ -5,11 +5,16 @@ from conftest import urls_list
 
 @pytest.mark.parametrize("url", urls_list)
 def test_response_ok(url: str): 
+    '''
+        Входной параметр - url, для которого нужна проверка.
+        Проверяет, что ответ сервера по заданому URL - 200.
+    '''
     response = requests.get(url)
     status = response.status_code
     if status != 200:
         with open('wrong_status.txt', 'a') as output_file:
             output_file.write(url+' - '+str(status)+'\n')
+    assert status == 200
 
 @pytest.mark.parametrize("url", urls_list)
 def test_canonical_url(url: str, regexp):

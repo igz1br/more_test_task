@@ -1,0 +1,5 @@
+noncanonical_url.txt
+wrong_status.txt
+settings.json
+__pycache__/*
+.pytest_cache/*

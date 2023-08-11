@@ -17,7 +17,7 @@ def regexp():
 
 def urls():
     regexp = re.compile(r"<loc>([\s\S]+?)<\/loc>")
-    sitemap_url = "https://mospolytech.ru/sitemap-files.xml"
+    sitemap_url = "https://mospolytech.ru/sitemap-files.xml" #Ссылка на сайтмап
     sitemap_response = requests.get(sitemap_url)
     if sitemap_response.status_code != 200:
         raise Exception("Sitemap unavailable")
